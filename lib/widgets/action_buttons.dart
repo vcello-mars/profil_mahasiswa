@@ -6,41 +6,60 @@ class ActionButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Flexible(
-          flex: 1,
-          child: SizedBox(
-            width: double.infinity,
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 12,
+        vertical: 8,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Flexible(
+            flex: 1,
             child: ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text('Tombol Edit diklik'),
+                  ),
+                );
+              },
               icon: const Icon(Icons.edit),
-              label: const Text('Edit Profil'),
+              label: const Text('Edit'),
             ),
           ),
-        ),
-        const SizedBox(width: 12),
-        Flexible(
-          flex: 1,
-          child: SizedBox(
-            width: double.infinity,
+          const SizedBox(width: 8),
+          Flexible(
+            flex: 1,
             child: ElevatedButton.icon(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.indigo,
-                foregroundColor: Colors.white,
-              ),
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text('Tombol Bagikan diklik'),
+                  ),
+                );
+              },
+              icon: const Icon(Icons.share),
+              label: const Text('Bagikan'),
+            ),
+          ),
+          const SizedBox(width: 8),
+          Flexible(
+            flex: 1,
+            child: ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const AboutScreen()),
+                  MaterialPageRoute(
+                    builder: (context) => const AboutScreen(),
+                  ),
                 );
               },
-              icon: const Icon(Icons.info),
-              label: const Text('Tentang'),
+              child: const Text('Tentang'),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

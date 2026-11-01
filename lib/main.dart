@@ -14,7 +14,9 @@ class MyApp extends StatelessWidget {
       title: 'Profil Mahasiswa',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.blue,
+        ),
         useMaterial3: true,
       ),
       home: const ProfileScreen(),

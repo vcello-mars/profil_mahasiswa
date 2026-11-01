@@ -15,17 +15,18 @@ class ProfileHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        const SizedBox(height: 20),
         const ProfilePhoto(radius: 60),
         const SizedBox(height: 16),
         Text(
           name,
+          textAlign: TextAlign.center,
           style: const TextStyle(
-            fontSize: 22,
+            fontSize: 24,
             fontWeight: FontWeight.bold,
           ),
-          textAlign: TextAlign.center,
         ),
-        const SizedBox(height: 4),
+        const SizedBox(height: 8),
         Text(
           'NIM: $nim',
           style: const TextStyle(

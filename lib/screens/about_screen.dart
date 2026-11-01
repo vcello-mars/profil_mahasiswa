@@ -9,45 +9,41 @@ class AboutScreen extends StatelessWidget {
       body: Stack(
         children: [
           Container(
+            width: double.infinity,
+            height: double.infinity,
             decoration: const BoxDecoration(
               gradient: LinearGradient(
-                colors: [Colors.indigo, Colors.deepPurple], // <--- DIUBAH KE deepPurple
+                colors: [
+                  Colors.blue,
+                  Colors.purple,
+                ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
             ),
           ),
+
           const Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.mobile_friendly, size: 80, color: Colors.white),
-                SizedBox(height: 16),
-                Text(
-                  'Tentang Aplikasi',
-                  style: TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-                SizedBox(height: 8),
-                Text(
-                  'Aplikasi Profil Mahasiswa v1.0\nPraktikum Pemrograman Mobile',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.white70, fontSize: 16),
-                ),
-              ],
+            child: Text(
+              'Tentang Aplikasi',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
+
           Positioned(
             top: 40,
             left: 16,
-            child: CircleAvatar(
-              backgroundColor: Colors.white,
-              child: IconButton(
-                icon: const Icon(Icons.arrow_back, color: Colors.indigo),
-                onPressed: () => Navigator.pop(context),
+            child: SafeArea(
+              child: ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                icon: const Icon(Icons.arrow_back),
+                label: const Text('Kembali'),
               ),
             ),
           ),

@@ -17,11 +17,21 @@ class ProfileInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        const SizedBox(height: 20),
         const Divider(),
         const SizedBox(height: 12),
-        InfoRow(icon: Icons.school, label: programStudi),
-        InfoRow(icon: Icons.email, label: email),
-        InfoRow(icon: Icons.location_on, label: lokasi),
+        InfoRow(
+          icon: Icons.school,
+          label: programStudi,
+        ),
+        InfoRow(
+          icon: Icons.email,
+          label: email,
+        ),
+        InfoRow(
+          icon: Icons.location_on,
+          label: lokasi,
+        ),
       ],
     );
   }

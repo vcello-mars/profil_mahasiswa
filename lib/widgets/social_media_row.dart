@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 class SocialMediaRow extends StatelessWidget {
   const SocialMediaRow({super.key});
 
-  void _showSnackBar(BuildContext context, String platform) {
+  void _showMessage(BuildContext context, String platform) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text('Membuka profil $platform'),
+        content: Text('Kamu memilih $platform'),
         duration: const Duration(seconds: 2),
       ),
     );
@@ -18,16 +18,31 @@ class SocialMediaRow extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         IconButton(
-          icon: const Icon(Icons.camera_alt, color: Colors.purple),
-          onPressed: () => _showSnackBar(context, 'Instagram'),
+          tooltip: 'Instagram',
+          onPressed: () => _showMessage(context, 'Instagram'),
+          icon: const Icon(
+            Icons.camera_alt,
+            color: Colors.purple,
+            size: 32,
+          ),
         ),
         IconButton(
-          icon: const Icon(Icons.work, color: Colors.blue),
-          onPressed: () => _showSnackBar(context, 'LinkedIn'),
+          tooltip: 'LinkedIn',
+          onPressed: () => _showMessage(context, 'LinkedIn'),
+          icon: const Icon(
+            Icons.work,
+            color: Colors.blue,
+            size: 32,
+          ),
         ),
         IconButton(
-          icon: const Icon(Icons.code, color: Colors.black),
-          onPressed: () => _showSnackBar(context, 'GitHub'),
+          tooltip: 'GitHub',
+          onPressed: () => _showMessage(context, 'GitHub'),
+          icon: const Icon(
+            Icons.code,
+            color: Colors.black87,
+            size: 32,
+          ),
         ),
       ],
     );
